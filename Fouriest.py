@@ -3,7 +3,7 @@ Computes the Fouriest transform of a given base-10 integer.
 Based on the SMBC comic: http://www.smbc-comics.com/?id=2874
 """
 from math import floor
-number = 624
+number = 336
 
 def convert_base(num,to_base):
     if num <= to_base:
@@ -32,8 +32,8 @@ def fouriest_transform(num):
             if max_fours[0] >= len(str(num)):
                 print("The Fouriest Transform of " + str(num) + " is " + str(convert_base(num,max_fours[1])) + " which is the base " + str(max_fours[1]) + " form.")
                 return
-        if cur_base == 100:
-            print("No Fouriest Transform found in bases 4-100.")
+        if cur_base == num+2:
+            print("No Fouriest Transform found in bases 4-" + str(num+2) + ".")
             return
         cur_base += 1
 
